@@ -1,0 +1,28 @@
+.navbar {
+	box-shadow: 2px 2px 4px;
+  }
+
+  .navbar-nav .nav-link {
+	color: rgba(4, 57, 94, 1);
+	margin-right: 10px;
+	font-weight: 600;
+  }
+
+  .modal {
+	background-color: rgba(226, 243, 255, 0.5);
+  }
+
+
+  .modal-body input::placeholder {
+	color: white;
+  }
+
+.modal-header,
+.modal-header .modal-title {
+  border-bottom: none;
+}
+
+.btn-close {
+  background-color: white !important;
+  opacity: 1 !important;
+}
