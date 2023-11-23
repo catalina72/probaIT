@@ -14,34 +14,30 @@ const NavBar = () => {
   const handleHideLoginModal = () => setShowLoginModal(false);
 
   const handleRegister = () => {
-    // Add your registration logic here
-    // Close the modal after registration
     handleHideRegisterModal();
   };
 
   const handleLogin = () => {
-    // Add your login logic here
-    // Close the modal after login
     handleHideLoginModal();
   };
 
   return (
-    <div className='row' style={{ marginBottom: "100px" }}>
-      <Navbar bg="light" expand="lg" fixed="top">
+    <div className='row' style={{ marginBottom: '100px' }}>
+      <Navbar bg='light' expand='lg' fixed='top'>
         <Navbar.Brand style={{ marginLeft: "20px" }}>
-          <img src="logo.png" alt="" />
+          <img src='logo.png' alt='' />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarNavDropdown"/>
+        <Navbar.Toggle aria-controls='navbarNavDropdown'/>
         
-        <Navbar.Collapse id="navbarNavDropdown" className="justify-content-end">
-          <Nav className="ml-auto">
+        <Navbar.Collapse id='navbarNavDropdown' className='justify-content-end'>
+          <Nav className='ml-auto'>
             <li>
-              <Button variant="link" onClick={handleShowLoginModal} style={buttonStyle}>
+              <Button variant='link' onClick={handleShowLoginModal}>
                 Login
               </Button>
             </li>
             <li>
-              <Button variant="link" onClick={handleShowRegisterModal} style={buttonStyle}>
+              <Button variant='link' onClick={handleShowRegisterModal}>
                 Register
               </Button>
             </li>
@@ -50,14 +46,14 @@ const NavBar = () => {
       </Navbar>
 
       <AuthModal
-        title="Register"
+        title='Register'
         show={showRegisterModal}
         onHide={handleHideRegisterModal}
         onSubmit={handleRegister}
       />
 
       <AuthModal
-        title="Login"
+        title='Login'
         show={showLoginModal}
         onHide={handleHideLoginModal}
         onSubmit={handleLogin}
@@ -68,42 +64,32 @@ const NavBar = () => {
 
 const AuthModal = ({ title, show, onHide, onSubmit }) => {
   return (
-    <Modal centered show={show} onHide={onHide} style={modalStyle}>
-      <Modal.Header closeButton style={modalHeaderStyle}>
-        <Modal.Title className="d-flex justify-content-center w-100" style={modalTitleStyle}>
+    <Modal centered show={show} onHide={onHide}>
+      <Modal.Header closeButton>
+        <Modal.Title className='d-flex justify-content-center w-100'>
           {title}
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className='text-center' style={modalBodyStyle}>
-        <Form style={formStyle}>
-          <Form.Group controlId="formBasicEmail" className="mb-5">
-            <Form.Control type="email" placeholder="Email" style={inputStyle} />
+      <Modal.Body className='text-center'>
+        <Form>
+          <Form.Group controlId='formBasicEmail' className='mb-5'>
+            <Form.Control type='email' placeholder='Email' />
           </Form.Group>
-          <Form.Group controlId="formBasicPassword" className="mb-5">
-            <Form.Control type="password" placeholder="Password" style={inputStyle} />
+          <Form.Group controlId='formBasicPassword' className='mb-5'>
+            <Form.Control type='password' placeholder='Password' />
           </Form.Group>
-          {title === "Register" && (
-            <Form.Group controlId="formBasicPassword" className="mb-5">
-              <Form.Control type="password" placeholder="Confirm Password" style={inputStyle} />
+          {title === 'Register' && (
+            <Form.Group controlId='formBasicPassword' className='mb-5'>
+              <Form.Control type='password' placeholder='Confirm Password' />
             </Form.Group>
           )}
-          <Button style={submitButtonStyle} variant="primary" onClick={onSubmit}>
-            {title === "Login" ? "Login" : "Create account"}
+          <Button className='btn-submit' onClick={onSubmit}>
+            {title === 'Login' ? 'Login' : 'Create account'}
           </Button>
         </Form>
       </Modal.Body>
     </Modal>
   );
 };
-
-const modalStyle = { backgroundColor: 'rgba(226, 243, 255, 0.5)', color: 'rgba(4, 57,94,1)' };
-const modalHeaderStyle = { backgroundColor: "rgba(4, 57, 94, 1)", border: 'none' };
-const modalTitleStyle = { color: "white" };
-const closeButtonStyle = { backgroundColor: 'white', color: 'rgba(4, 57, 94, 1)', border: 'none', fontSize: '30px', padding: '1px', paddingTop:'0.8px', paddingBottom:'0px'};
-const modalBodyStyle = { backgroundColor: "rgba(4, 57, 94, 1)" };
-const formStyle = { backgroundColor: "rgba(4, 57, 94, 1)" };
-const inputStyle = { backgroundColor: 'rgba(4, 57, 94, 1)', border: "2px solid white", color: 'white' };
-const submitButtonStyle = { alignSelf: "center", backgroundColor: 'white', color: 'rgba(4, 57, 94, 1)', border: '2px solid white' };
-const buttonStyle = { color: "rgba(4, 57, 94, 1)", textDecoration: "none", fontWeight: "600" };
 
 export default NavBar;

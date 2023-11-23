@@ -3,10 +3,3 @@
 	margin: 20px;
 	overflow-y: auto;
 }
-
-.btn {
-	background-color: rgba(4, 57, 94, 1);
-	border: 2px rgba(4, 57, 94, 1);
-	position: absolute;
-	bottom: 30px;
-}

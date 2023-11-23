@@ -34,7 +34,7 @@ const PollsPage = () => {
     <Container>
       <Row>
         {polls.map((poll) => (
-          <Col key={poll.id} md={6} className="mb-3">
+          <Col key={poll.id} md={6} className='mb-3'>
             <PollCard
               title={poll.title}
               question={poll.question}

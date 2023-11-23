@@ -2,14 +2,9 @@
 	box-shadow: 2px 2px 4px;
   }
 
-  .navbar-nav .nav-link {
-	color: rgba(4, 57, 94, 1);
-	margin-right: 10px;
-	font-weight: 600;
-  }
-
   .modal {
 	background-color: rgba(226, 243, 255, 0.5);
+  color: rgba(4, 57, 94, 1);
   }
 
 
@@ -17,12 +12,38 @@
 	color: white;
   }
 
-.modal-header,
-.modal-header .modal-title {
-  border-bottom: none;
+  .modal-body {
+     background-color: rgba(4, 57, 94, 1);
+  }
+
+  .modal-header {
+    background-color: rgba(4, 57, 94, 1);
+    border-bottom: none !important;
+  }
+  
+  .modal-title {
+    color: white !important;
+  }
+
+.btn-link {
+    color: rgba(4, 57, 94, 1) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
 }
 
 .btn-close {
   background-color: white !important;
   opacity: 1 !important;
+}
+
+.btn-submit { 
+  align-self: center;
+  background-color: white !important;
+  color: rgba(4, 57, 94, 1) !important;
+  border: 2px solid white !important;
+}
+
+.form-control {
+  background-color: rgba(4, 57, 94, 1) !important;
+  border: 2px solid white !important;
 }
