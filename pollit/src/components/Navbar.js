@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Nav, Navbar, Modal, Button, Form } from 'react-bootstrap';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 
 const NavBar = () => {
   const [showRegisterModal, setShowRegisterModal] = useState(false);
@@ -18,6 +19,7 @@ const NavBar = () => {
   };
 
   const handleLogin = () => {
+
     handleHideLoginModal();
   };
 
@@ -73,10 +75,10 @@ const AuthModal = ({ title, show, onHide, onSubmit }) => {
       <Modal.Body className='text-center'>
         <Form>
           <Form.Group controlId='formBasicEmail' className='mb-5'>
-            <Form.Control type='email' placeholder='Email' />
+            <Form.Control type='email' placeholder='Email' name='email' />
           </Form.Group>
           <Form.Group controlId='formBasicPassword' className='mb-5'>
-            <Form.Control type='password' placeholder='Password' />
+            <Form.Control type='password' placeholder='Password' name='password'  />
           </Form.Group>
           {title === 'Register' && (
             <Form.Group controlId='formBasicPassword' className='mb-5'>
@@ -90,6 +92,7 @@ const AuthModal = ({ title, show, onHide, onSubmit }) => {
       </Modal.Body>
     </Modal>
   );
+
 };
 
 export default NavBar;

@@ -1,16 +1,10 @@
-.footer {
-	position: fixed;
+.nav {
 	bottom: 0;
-	width: 100%;
 	background-color: #FF1F66;
+	height: fit-content;
   }
 
-.a {
-	background-color: #FF1F66;
-	border: none
-} 
-
-.row {
+.img {
+	height: 10px !important;
 	margin-left: 2vw;
-	margin-right: 2vw
-}
+} 

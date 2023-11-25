@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { Row, Col } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 
 const socialMediaLinks = [
   {
@@ -19,20 +19,15 @@ const socialMediaLinks = [
 
 const Footer = () => {
   return (
-
-        <footer className='text-center'>
-          <div style={{ backgroundColor: '#FF1F66' }}>
-            <Row>
-              {socialMediaLinks.map((link, index) => (
-                <Col key={index} className='col-4'>
-                  <a  href={link.url}>
-                    <img src={link.icon} alt={link.alt} style={{ height: '6vw' }} />
-                  </a>
-                </Col>
-              ))}
-            </Row>
-          </div>
-        </footer>
+    <Nav className="justify-content-center">
+      {socialMediaLinks.map((link, index) => (
+        <Nav.Item as="li" key={index} style={{ marginInline: '9vw' }}>
+          <Nav.Link href={link.url}>
+            <img src={link.icon} alt="" style={{ height: '70px' }} />
+          </Nav.Link>
+        </Nav.Item>
+      ))}
+    </Nav>
   );
 };
 
