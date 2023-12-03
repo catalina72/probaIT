@@ -2,8 +2,10 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import PollsPage from './PollsPage';
 import './Home.css'
+import { useLocation } from 'react-router-dom';
 
 const Home = () => {
+  const location=useLocation();
   return (
     <Container fluid>
       <Row className='align-items-center'>

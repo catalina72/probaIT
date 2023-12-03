@@ -12,9 +12,7 @@ const Login = ({ show, handleClose }) => {
   };
 
   const handleLogin = () => {
-    // Implement login logic
-    // Display success or error message
-    handleClose(); // Close the modal
+    handleClose();
   };
 
   return (
