@@ -21,9 +21,9 @@ const Footer = () => {
   return (
     <Nav className="justify-content-center">
       {socialMediaLinks.map((link, index) => (
-        <Nav.Item as="li" key={index} style={{ marginInline: '9vw' }}>
+        <Nav.Item as="li" key={index} style={{ marginInline: '5vw' }}>
           <Nav.Link href={link.url}>
-            <img src={link.icon} alt="" style={{ height: '70px' }} />
+            <img src={link.icon} alt="" style={{ height: '7vh' }} />
           </Nav.Link>
         </Nav.Item>
       ))}
