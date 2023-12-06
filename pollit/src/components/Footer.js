@@ -11,7 +11,7 @@ const socialMediaLinks = [
   {
     icon: 'uil_facebook.png',
     url: 'https://www.facebook.com/LsacBucuresti',
-    style: {width:'6vw', marginLeft: '80px', marginRight: '80px'},
+    style: {width:'6vw', marginLeft: '110px', marginRight: '110px'},
   },
   {
     icon: 'mdi_twitch.png',
