@@ -5,6 +5,10 @@ PollIT este o aplicatie web care permite utilizatorilor sa creeze si sa particip
 - Caracteristici
 - Cerinte Preliminare
 - Instalare
+- Utilizare
+- Backend API
+	Autentificare
+	Operatii CRUD
 
 ## Caracteristici
 - Autentificare utilizator (Register and Login)
@@ -40,3 +44,32 @@ Instalati dependentele pentru frontend:
 cd pollit
 npm install
 ```
+
+## Utilizare
+Porniti serverul pentru backend:
+```
+cd server
+npm start
+```
+Serverul la rula la adresa http://localhost:3000.
+
+Porniti serverul pentru frontend:
+```
+cd pollit
+npm start
+```
+Frontend-ul va rula la adresa http://localhost:3001.
+
+Deschideti browser-ul la adresa frontend-ului pentru a utiliza aplicatia PollIT.
+
+## Backend API
+### Autentificare
+- Register
+	Endpoint: POST /register
+	Creeaza un nou cont.
+
+- Login
+	Endpoint: POST /login
+	Autentifica credentialele utilizatorului si furnizeaza un token JWT pentru verificarile ulterioare.
+
+### Operatii CRUD
