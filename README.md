@@ -5,7 +5,7 @@ PollIT este o aplicatie web care permite utilizatorilor sa creeze si sa particip
 - Caracteristici
 
 ## Caracteristici
-- Autentificare utilizator (Register and Login)
+- Autentificare utilizator (Register si Login)
 - Operatii de creare, citire, actualizare si stergere (CRUD) a poll-urilor
 - Encriptarea parolei pentru securitate
 - Validarea credentialelor pentru inregistrare si logare
