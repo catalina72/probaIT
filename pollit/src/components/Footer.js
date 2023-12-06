@@ -6,14 +6,17 @@ const socialMediaLinks = [
   {
     icon: 'mdi_instagram.png',
     url: 'https://www.instagram.com/lsacbucuresti/',
+    style: {width:'6vw'},
   },
   {
     icon: 'uil_facebook.png',
     url: 'https://www.facebook.com/LsacBucuresti',
+    style: {width:'6vw', marginLeft: '80px', marginRight: '80px'},
   },
   {
     icon: 'mdi_twitch.png',
     url: 'https://www.twitch.tv/lsac_bucuresti',
+    style: {width:'6vw'},
   },
 ];
 
@@ -21,9 +24,9 @@ const Footer = () => {
   return (
     <Nav className="justify-content-center">
       {socialMediaLinks.map((link, index) => (
-        <Nav.Item as="li" key={index} style={{ marginInline: '5vw' }}>
+        <Nav.Item as="li" key={index}>
           <Nav.Link href={link.url}>
-            <img src={link.icon} alt="" style={{ height: '6vh' }} />
+            <img src={link.icon} alt="" style={link.style}/>
           </Nav.Link>
         </Nav.Item>
       ))}
