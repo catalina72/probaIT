@@ -1,6 +1,6 @@
 # PollIT
 PollIT este o aplicatie web care permite utilizatorilor sa creeze si sa participe la poll-uri pentru a culege opinii si feedback direct. Aceasta platforma le ofera utilizatorilor o modalitate simpla si eficienta de a elabora sondaje personalizate, incluzand si optiuni pentru a-si exprima opiniile in legatura cu o gama larga de teme. 
-<img src="https://github.com/catalina72/probaIT/tree/main/1.png">
+<img src="https://github.com/catalina72/probaIT/blob/main/1.png">
 
 ## Cuprins
 - Caracteristici
