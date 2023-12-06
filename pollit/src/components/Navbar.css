@@ -20,6 +20,9 @@
   margin-top: 71px !important;
   }
 
+.modal-dialog {
+	margin-top: 0px;
+}
 
   .modal-body input::placeholder {
 	color: white;
