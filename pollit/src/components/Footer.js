@@ -23,7 +23,7 @@ const Footer = () => {
       {socialMediaLinks.map((link, index) => (
         <Nav.Item as="li" key={index} style={{ marginInline: '5vw' }}>
           <Nav.Link href={link.url}>
-            <img src={link.icon} alt="" style={{ height: '7vh' }} />
+            <img src={link.icon} alt="" style={{ height: '6vh' }} />
           </Nav.Link>
         </Nav.Item>
       ))}

@@ -1,12 +1,10 @@
 .navbar {
   position: fixed;
   box-shadow: 0px 5px 10px;
-  z-index: 2001 !important;
 }
 
 @media (max-width: 990px){
 .navbar-collapse {
-  z-index: 1999 !important;
   position: fixed;
   width: fit-content;
   top: 71px; 
@@ -14,20 +12,12 @@
   padding-left: 70px;
   text-align: right;
   background-color: #f8f9fa;
-  
   padding-bottom: 10px;
 }}
-
-
-    .navbar-toggle {
-      background-color: aqua;
-    }
-
   .modal {
-    z-index: 2000 !important;
 	background-color: rgba(226, 243, 255, 0.5);
   color: rgba(4, 57, 94, 1);
-  
+  margin-top: 71px !important;
   }
 
 

@@ -1,50 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const Login = ({ show, handleClose }) => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
+const Login = ({ title, show, onHide, handleHideLoginModal }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-  const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  async function handleLogin(e) {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/login', {
+        email: email,
+        password: password,
+      });
 
-  const handleLogin = () => {
-    handleClose();
-  };
+      console.log('Login Response:', response);
+
+      if (response.status === 200) {
+        const token = response.data.token;
+        localStorage.setItem('token', token);
+        setIsLoggedIn(true);
+        window.location.reload();
+        onHide();
+      } else if (response.status === 401) {
+        alert('User has not signed up');
+      }
+    } catch (error) {
+      console.log(error);
+      alert('Login failed');
+    }
+  }
 
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal centered show={show} onHide={onHide}>
       <Modal.Header closeButton>
-        <Modal.Title>Login</Modal.Title>
+        <Modal.Title className='d-flex justify-content-center w-100'>
+          {title}
+        </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <Form>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+      <Modal.Body className='text-center'>
+        <Form action='POST'>
+          <Form.Group controlId='formBasicEmail' className='mb-5'>
+            <Form.Control type='email' placeholder='Email' autoComplete='username' name='email' onChange={(e) => setEmail(e.target.value)} />
+          </Form.Group>
+          <Form.Group controlId='formBasicPassword' className='mb-5'>
             <Form.Control
-              type="email"
-              placeholder="Enter email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
+              type='password'
+              placeholder='Password'
+              name='password'
+              autoComplete='current-password'
+              onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-            />
-          </Form.Group>
-
-          <Button variant="primary" onClick={handleLogin}>
+          <Button className='btn-submit' onClick={handleLogin}>
             Login
           </Button>
         </Form>
