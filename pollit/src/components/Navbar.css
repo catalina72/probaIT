@@ -21,7 +21,7 @@
   }
 
 .modal-dialog {
-	margin-top: 0px;
+	margin-top: 10px !important;
 }
 
   .modal-body input::placeholder {
