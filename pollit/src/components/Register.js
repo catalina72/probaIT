@@ -8,15 +8,6 @@ const Register = ({ title, show, onHide, handleShowLoginModal}) => {
   const [password, setPassword] = useState('')
   const [confirmPassword, setCPassword] = useState('')
 
-  const [showRegisterModal, setShowRegisterModal] = useState(false);
-
-  const handleShowRegisterModal = () => {
-    setShowRegisterModal(true);
-    document.getElementById('navbarNavDropdown').classList.remove('show');
-  };
-
-  const handleHideRegisterModal = () => setShowRegisterModal(false);
-
   const handleRegister = async () => {
     try {
       const response = await axios.post('http://localhost:3000/register', {

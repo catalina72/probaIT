@@ -107,7 +107,7 @@ const NavBar = () => {
                 {!ShowPollModal && (
                   <li>
                     <Button variant='link' onClick={handleShowPollModal}>
-                      Create Poll
+                      Create a Poll
                     </Button>
                   </li>
                 )}

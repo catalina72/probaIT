@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = ({ title, show, onHide, handleHideLoginModal }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
